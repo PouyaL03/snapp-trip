@@ -1,8 +1,10 @@
 package model
 
+type amountType string
+
 const (
-	FIXED      string = "FIXED"
-	PERCENTAGE string = "PERCENTAGE"
+	FIXED      amountType = "FIXED"
+	PERCENTAGE amountType = "PERCENTAGE"
 )
 
 type Route struct {
@@ -31,6 +33,15 @@ type TripResponse struct {
 	BasePrice    int    `json:"basePrice"`
 	Markup       int    `json:"markup"`
 	PayablePrice int    `json:"payablePrice"`
+}
+
+type Rule struct {
+	Routes      []Route    `json:"routes"`
+	Airlines    []string   `json:"airlines"`
+	Agencies    []string   `json:"agencies"`
+	Suppliers   []string   `json:"suppliers"`
+	AmountType  amountType `json:"amountType"`
+	AmountValue int        `json:"amountValue"`
 }
 
 type Response struct {
