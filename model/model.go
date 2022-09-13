@@ -1,6 +1,12 @@
 package model
 
-type amountType string
+type tmp interface {
+	Info() 
+}
+
+type (
+	amountType string
+)
 
 const (
 	FIXED      amountType = "FIXED"
