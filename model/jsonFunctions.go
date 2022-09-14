@@ -2,7 +2,6 @@ package model
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"log"
 )
 
@@ -26,14 +25,4 @@ func GetRulesFromJson(data []byte) []Rule{
 	}
 
 	return rules
-}
-
-func ReadFromFile(path string) []byte {
-	fileData, err := ioutil.ReadFile(path)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	return fileData
 }

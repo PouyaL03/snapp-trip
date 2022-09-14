@@ -13,5 +13,4 @@ func (trip *Trip) Info() {
 }
 
 func (rule *Rule) Info() {
-
 }

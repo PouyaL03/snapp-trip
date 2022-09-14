@@ -14,8 +14,8 @@ const (
 )
 
 type Route struct {
-	Origin      string `json:"origin"`
-	Destination string `json:"destination"`
+	Origin      string `json:"origin" gorm:"origin"`
+	Destination string `json:"destination" gorm:"origin"`
 }
 
 type Trip struct {
@@ -53,4 +53,24 @@ type Rule struct {
 type Response struct {
 	Message string `json:"message"`
 	Status  string `json:"status"`
+}
+
+type Airline struct {
+	Code string `json:"code" gorm:"code"`
+	EnName string `json:"enName" gorm:"enName"`
+	FaName string `json:"faName" gorm:"faName"`
+}
+
+type Agency struct {
+	Name string `json:"name" gorm:"name"`
+}
+
+type City struct {
+	Code string `json:"code" gorm:"code"`
+	FaName string `json:"faName" gorm:"faName"`
+}
+
+type Supplier struct {
+	EnName string `json:"enName" gorm:"enName"`
+	FaName string `json:"faName" gorm:"faName"`
 }
